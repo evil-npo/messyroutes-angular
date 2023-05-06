@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./f1-container.component.css']
 })
 export class F1ContainerComponent {
-
+  ngOnInit() {
+    console.log('created f1 container');
+  }
 }

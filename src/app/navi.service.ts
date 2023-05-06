@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Routes } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, interval } from 'rxjs';
 import { F1ContainerComponent } from './feature1/f1-container/f1-container.component';
 import { F2ContainerComponent } from './feature2/f2-container/f2-container.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -19,7 +19,11 @@ export class NaviService {
     {path: '**', component: NotFoundComponent}
   ];
 
-  constructor() { }
+  constructor() {
+    // interval(1000).subscribe(
+    //   () => this.updateRoute.next()
+    // )
+  }
 
   routeCreator(): Routes {
     return this.routes;

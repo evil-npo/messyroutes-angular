@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./option1.component.css']
 })
 export class Option1Component {
-
+  ngOnInit() {
+    console.log('created o1');
+  }
 }
