@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Routes } from '@angular/router';
-import { BehaviorSubject, Subject, interval, timer } from 'rxjs';
+import { Subject, timer } from 'rxjs';
 import { F1ContainerComponent } from './feature1/f1-container/f1-container.component';
 import { F2ContainerComponent } from './feature2/f2-container/f2-container.component';
 import { NotFoundComponent } from './not-found/not-found.component';
@@ -27,7 +27,7 @@ export class NaviService {
   ];
 
   constructor() {
-    timer(10_000).subscribe(() => {
+    timer(5_000).subscribe(() => {
       this.routes[0].children?.push(
         { path: 'o3', component: Option3Component }
       );
@@ -39,5 +39,5 @@ export class NaviService {
     return this.routes;
   }
 
-  updateRoute = new BehaviorSubject<void>(null as any);
+  updateRoute = new Subject<void>();
 }
