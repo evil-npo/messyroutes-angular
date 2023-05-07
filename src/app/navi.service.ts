@@ -27,12 +27,13 @@ export class NaviService {
   ];
 
   constructor() {
-    timer(5_000).subscribe(() => {
-      this.routes[0].children?.push(
-        { path: 'o3', component: Option3Component }
-      );
-      this.updateRoute.next();
-    });
+    timer(500).subscribe(() => this.updateRoute.next());
+    // timer(5_000).subscribe(() => {
+    //   this.routes[0].children?.push(
+    //     { path: 'o3', component: Option3Component }
+    //   );
+    //   this.updateRoute.next();
+    // });
   }
 
   routeCreator(): Routes {

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'messyroutes';
+  ngOnInit() {
+    console.log('app component loaded');
+  }
 }

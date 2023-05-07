@@ -8,7 +8,7 @@ import { Feature1Module } from './feature1/feature1.module';
 import { Feature2Module } from './feature2/feature2.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NaviService } from './navi.service';
-import { first } from 'rxjs';
+import { first, firstValueFrom } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -33,5 +33,5 @@ import { first } from 'rxjs';
 export class AppModule { }
 
 function appInit(naviService: NaviService) {
-  return () => naviService.updateRoute.pipe(first()).toPromise();
+  return () => firstValueFrom(naviService.updateRoute);
 }
